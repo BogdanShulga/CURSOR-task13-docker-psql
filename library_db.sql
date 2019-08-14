@@ -10,7 +10,7 @@ CREATE TABLE Book (
 	genre varchar(255),
 	description varchar(1000),
 	rate int,
-    authorID int
+authorID int 
 );
 
 /* Створити таблицю Author(id, firstName, lastName, country, age) */
@@ -158,7 +158,7 @@ VALUES (20, 'Cordelia', 'Kingsbridge', 'Canada', 56);
 
 /* Об'єднати таблиці між собою, викорстовуючи `join` */
 
-SELECT * FROM book LEFT JOIN author ON book.authorid=author.id;
+SELECT * FROM book LEFT JOIN author ON book.authorid=author.authorid;
 
 /* Вивести всі книги одного жанру */
 
@@ -175,7 +175,7 @@ SELECT * FROM book WHERE rate = 10;
 SELECT bookid, title, max(rate) AS max_rate 
 FROM book
 GROUP BY bookid, title 
-ORDER BY max(rate) DESC
+ORDER BY max(rate) DESC;
 
 /* Вивести всі книги одного автора */
 
